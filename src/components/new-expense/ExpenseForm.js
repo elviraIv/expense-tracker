@@ -21,18 +21,17 @@ export const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmout,
+      amount: +enteredAmout,
       date: new Date(enteredDate),
     };
 
     console.log(expenseData);
-    
-    props.onSaveExpenseData(expenseData);
-    setEnteredTitle('');
-    setEnteredAmout('');
-    setEnteredDate('');
-  };
 
+    props.onSaveExpenseData(expenseData);
+    setEnteredTitle("");
+    setEnteredAmout("");
+    setEnteredDate("");
+  };
 
   return (
     <form onSubmit={submitFormHandler}>
