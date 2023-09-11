@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./ExpenseForm.css";
 
 export const ExpenseForm = (props) => {
-  const [eneteredTitle, setEnteredTitle] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmout, setEnteredAmout] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
@@ -20,10 +20,12 @@ export const ExpenseForm = (props) => {
     e.preventDefault();
 
     const expenseData = {
-      title: eneteredTitle,
+      title: enteredTitle,
       amount: enteredAmout,
       date: new Date(enteredDate),
     };
+
+    console.log(expenseData);
     
     props.onSaveExpenseData(expenseData);
     setEnteredTitle('');
@@ -41,7 +43,7 @@ export const ExpenseForm = (props) => {
             onChange={titleChangeHandler}
             className="new-expense__control input"
             type="text"
-            value={eneteredTitle}
+            value={enteredTitle}
           />
         </div>
         <div className="new-expense__control">
